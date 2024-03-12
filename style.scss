@@ -37,8 +37,9 @@ textarea {
     font-family: "Poppins", sans-serif;
 }
 
+
 section {
-    overflow: hidden;
+  
 }
 
 $primary-100: #f2f7ff;
@@ -734,22 +735,22 @@ $font-size-paragraph-1: 24px;
 
 .section-hero-pustolovine {
     background-position: center;
-    background-image: url("./assets/images/pustolovine-cover.jpg")
+    background-image: url("./assets/images/pustolovine-cover.jpg");
 }
 
 .section-hero-galerija {
     background-position: center;
-    background-image: url("./assets/images/hero-image-galerija.jpg")
+    background-image: url("./assets/images/hero-image-galerija.jpg");
 }
 
 .section-hero-o-nama {
     background-position: center;
-    background-image: url("./assets/images/hero-image-o-nama.png")
+    background-image: url("./assets/images/hero-image-o-nama.png");
 }
 
 .section-hero-plovila {
     background-position: center;
-    background-image: url("./assets/images/Plovila\,\ pozadinska\ slika.jpg")
+    background-image: url("./assets/images/Plovila\,\ pozadinska\ slika.jpg");
 }
 
 .section-content {
@@ -791,6 +792,7 @@ $font-size-paragraph-1: 24px;
         list-style: none;
         justify-content: center;
         padding-left: 0px;
+        // padding-top: 15px;
         @media (min-width: 1600px) or (min-height: 899px) {
             @include marginBetweenElements(30px, "horizontal");
         }
@@ -882,7 +884,7 @@ $font-size-paragraph-1: 24px;
         }
         &__show {
             transition: 0.5s ease-in-out;
-            max-height: 5000px;
+            max-height: 10000px;
             opacity: 1 !important;
             z-index: 10;
             h2,h3,p {
@@ -891,7 +893,7 @@ $font-size-paragraph-1: 24px;
             }
             * {
                 transition: max-height 0.5s ease-in-out;
-                max-height: 6000px;
+                max-height: 10000px;
             }
         }
         @media (min-width: 1600px) or (min-height: 899px) {
@@ -1935,6 +1937,7 @@ $font-size-paragraph-1: 24px;
         flex-direction: column;
         align-items: center;
         cursor: pointer;
+        width: 20%;
         @media (min-width: 1600px) or (min-height: 899px) {
             padding: 20px 52px;
             border: 3px solid $neutral-500;
@@ -1944,12 +1947,12 @@ $font-size-paragraph-1: 24px;
             padding: 12px 32px;
             border: 2px solid $neutral-500;
             width: fit-content;
-            width: 20%;
+            width: 25%;
             @include marginBetweenElements(10px, "vertical");
         }
         @media (max-width: 650px) {
             padding: 16px 32px;
-            width: 50%;
+            width: 65%;
         }
 
         &__selected {
@@ -2693,4 +2696,8 @@ $font-size-paragraph-1: 24px;
     font-size: 1.2rem;
     text-align: center;
     margin-top: 12px;
+}
+
+#sailling-form {
+    overflow: hidden;
 }
