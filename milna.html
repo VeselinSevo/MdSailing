@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="sr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD Sailing - Milna</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="./assets/logo/Logo.ico">
+</head>
+
+<body>
+    <header class="header">
+        <nav class="header__nav">
+            <a class="header__logo-link" href="/index.html" >
+                <img class="header__logo" src="./assets/svgs/logo-temp.svg" alt="logo" />
+            </a>
+            <ul class="header__list">
+                <li class="header__item header__item__dropdown" id="vodic">
+                    <a class="header__anchor">
+                        Vodič
+                    </a>
+                    <img class="header__item__arrow" id="vodic-arrow" src="./assets/svgs/arrow-down.svg" alt="strelica na dole" />
+                </li>
+                <li class="header__item header__item__dropdown" id="pustolovine">
+                    <a class="header__anchor">
+                        Pustolovine
+                    </a>
+                    <img class="header__item__arrow" id="pustolovine-arrow" src="./assets/svgs/arrow-down.svg" alt="strelica na dole" />
+                </li>
+                <li class="header__item">
+                    <a href="/destinacije" class="header__anchor header__anchor__selected">
+                        Destinacije
+                    </a>
+                </li>
+                <li class="header__item">
+                    <a href="/plovila" class="header__anchor">
+                        Plovila
+                    </a>
+                </li>
+                <li class="header__item">
+                    <a href="/o-nama" class="header__anchor">
+                        O nama
+                    </a>
+                </li>
+                <li class="header__item">
+                    <a href="/index.html#sailing-form" class="CTA CTA__default CTA__primary">
+                        Rezerviši plovilo
+                    </a>
+                </li>
+            </ul>
+            <button class="header__button" id="burgerButton" aria-label="burger button">
+                <hr class="header__hr" id="hr1">
+                <hr class="header__hr" id="hr2">
+                <hr class="header__hr" id="hr3">
+            </button>
+            <menu class="header__menu" id="menu">
+                <li class="header__menu__item" id="vodic-hamburger">
+                    <a class="header__menu__anchor"> Vodič </a>
+                    <img class="header__item__arrow" id="vodic-hamburger-arrow" src="./assets/svgs/arrow-down.svg" alt="strelica na dole" />
+                </li>
+                <menu class="header__vodic-hamburger-menu" id="vodic-hamburger-menu" >
+                    <a class="header__vodic-hamburger-menu__item" href="/vodic.html#link-1" >
+                        <img class="header__vodic-hamburger-menu__icon" src="./assets/svgs/footer-sublink-arrow.svg" />
+                        <p class="header__vodic-hamburger-menu__text" >Kako bukirati brod</p>
+                    </a>
+                    <a class="header__vodic-hamburger-menu__item" href="/vodic.html#link-2" >
+                        <img class="header__vodic-hamburger-menu__icon" src="./assets/svgs/footer-sublink-arrow.svg" />
+                        <p class="header__vodic-hamburger-menu__text" >Sve o jedrenju</p>
+                    </a>
+                    <a class="header__vodic-hamburger-menu__item" href="/vodic.html#link-3" >
+                        <img class="header__vodic-hamburger-menu__icon" src="./assets/svgs/footer-sublink-arrow.svg" />
+                        <p class="header__vodic-hamburger-menu__text" >Odabir plovila</p>
+                    </a>
+                    <a class="header__vodic-hamburger-menu__item" href="/vodic.html#link-4" >
+                        <img class="header__vodic-hamburger-menu__icon" src="./assets/svgs/footer-sublink-arrow.svg" />
+                        <p class="header__vodic-hamburger-menu__text" >Skiper / Kapetan</p>
+                    </a>
+                    <a class="header__vodic-hamburger-menu__item" href="/vodic.html#link-5" >
+                        <img class="header__vodic-hamburger-menu__icon" src="./assets/svgs/footer-sublink-arrow.svg" />
+                        <p class="header__vodic-hamburger-menu__text" >Agent za najam plovila</p>
+                    </a>
+                </menu>
+                <li class="header__menu__item" id="pustolovine-hamburger">
+                    <a class="header__menu__anchor"> Pustolovine
+                    </a>
+                    <img class="header__item__arrow" id="pustolovine-hamburger-arrow" src="./assets/svgs/arrow-down.svg" alt="strelica na dole" />
+                </li>
+                <menu class="header__pustolovine-hamburger-menu" id="pustolovine-hamburger-menu" >
+                    <a class="header__pustolovine-hamburger-menu__item" href="/pustolovine.html#link-1" >
+                        <img class="header__pustolovine-hamburger-menu__icon" src="./assets/svgs/footer-sublink-arrow.svg" />
+                        <p class="header__pustolovine-hamburger-menu__text" >Privatna tura</p>
+                    </a>
+                    <a class="header__pustolovine-hamburger-menu__item" href="/pustolovine.html#link-2" >
+                        <img class="header__pustolovine-hamburger-menu__icon" src="./assets/svgs/footer-sublink-arrow.svg" />
+                        <p class="header__pustolovine-hamburger-menu__text" >Iznajmljivanje kabine</p>
+                    </a>
+                    <a class="header__pustolovine-hamburger-menu__item" href="/pustolovine.html#link-3" >
+                        <img class="header__pustolovine-hamburger-menu__icon" src="./assets/svgs/footer-sublink-arrow.svg" />
+                        <p class="header__pustolovine-hamburger-menu__text" >Hotila</p>
+                    </a>
+                </menu>
+                <li class="header__menu__item">
+                    <a href="/destinacije" class="header__menu__anchor"> Destinacije
+                    </a>
+                </li>
+                <li class="header__menu__item">
+                    <a href="/plovila" class="header__menu__anchor"> Plovila
+                    </a>
+                </li>
+                <li class="header__menu__item">
+                    <a href="/o-nama" class="header__menu__anchor"> O nama
+                    </a>
+                </li>
+                <li class="header__menu__item">
+                    <a href="/index.html#sailing-form" class="CTA CTA__small CTA__primary">
+                        Rezerviši plovilo
+                    </a>
+                </li>
+            </menu>
+        </nav>
+        <menu class="header__vodic-menu" id="vodic-menu">
+            <a class="header__vodic-menu__item" href="/vodic.html#link-1" >
+                <img class="header__vodic-menu__icon" src="./assets/svgs/vodic-icon-1.svg" />
+                <p class="header__vodic-menu__text" >Kako bukirati brod</p>
+            </a>
+            <a class="header__vodic-menu__item" href="/vodic.html#link-2" >
+                <img class="header__vodic-menu__icon" src="./assets/svgs/vodic-icon-2.svg" />
+                <p class="header__vodic-menu__text" >Odabir plovila</p>
+            </a>
+            <a class="header__vodic-menu__item" href="/vodic.html#link-3" >
+                <img class="header__vodic-menu__icon" src="./assets/svgs/vodic-icon-3.svg" />
+                <p class="header__vodic-menu__text" >Sve o jedrenju</p>
+            </a>
+            <a class="header__vodic-menu__item" href="/vodic.html#link-4" >
+                <img class="header__vodic-menu__icon" src="./assets/svgs/vodic-icon-4.svg" />
+                <p class="header__vodic-menu__text" >Skiper / Kapetan</p>
+            </a>
+            <a class="header__vodic-menu__item" href="/vodic.html#link-5" >
+                <img class="header__vodic-menu__icon" src="./assets/svgs/vodic-icon-5.svg" />
+                <p class="header__vodic-menu__text" >Agent za najam plovila</p>
+            </a>
+        </menu>
+        <menu class="header__pustolovine-menu" id="pustolovine-menu">
+            <a class="header__pustolovine-menu__item" href="/pustolovine.html#link-1" >
+                <img class="header__pustolovine-menu__icon" src="./assets/svgs/pustolovina-icon-1.svg" />
+                <p class="header__pustolovine-menu__text" >Privatna tura</p>
+            </a>
+            <a class="header__pustolovine-menu__item" href="/pustolovine.html#link-2" >
+                <img class="header__pustolovine-menu__icon" src="./assets/svgs/pustolovina-icon-2.svg" />
+                <p class="header__pustolovine-menu__text" >Iznajmljivanje kabine</p>
+            </a>
+            <a class="header__pustolovine-menu__item" href="/pustolovine.html#link-3" >
+                <img class="header__pustolovine-menu__icon" src="./assets/svgs/pustolovina-icon-3.svg" />
+                <p class="header__pustolovine-menu__text" >Hotila</p>
+            </a>
+        </menu>
+    </header>
+    <section class="section-hero section-hero-mini section-hero-ostrvo-1" id="milna">
+        <div class="section-hero__text">
+            <!-- <h1 class="heading__h1 section-hero__text__heading" > Milna </h1> -->
+        </div>
+    </section>
+    <section class="section-content-ostrvo-1 section" >
+        <div class="section__heading">
+            <h2 class="heading__h2 heading__h2__lightmode" > Milna </h2>
+            <p class="paragraph__subheading-h2 paragraph__subheading-h2__lightmode" > 
+                Slikovito dalmatinsko selo Milna, smešteno na ostrvu Brač u Hrvatskoj, predstavlja pravu oazu mira i lepote koja privlači turiste iz celog sveta.</p>
+        </div>
+        <div class="section-content-ostrvo-1__content">
+            <article class="section-content-ostrvo-1__content__article">
+                <p class="section-content-ostrvo-1__content__paragraph">Ovo malo ribarsko selo na severnoj obali Brača oduševljava posetioce svojim šarmom, autentičnošću i bogatom kulturnom baštinom.</p>
+                <p class="section-content-ostrvo-1__content__paragraph" >Jedan od razloga zbog kojeg treba posetiti Milnu je njena izvanredna prirodna lepota.</p>
+                <p class="section-content-ostrvo-1__content__paragraph" >Okružena kristalno čistim morem i bujnim mediteranskim zelenilom, Milna nudi prekrasne plaže, uvalice i uvale koje su raj za ljubitelje sunca i mora.
+                    Provesti noć na brodu u uvalama sela Milna je prava avantura koja će vas ostaviti bez daha. </p>
+                <p class="section-content-ostrvo-1__content__paragraph" >Ovdje možete uživati u opuštajućim šetnjama uz obalu, ronjenju u bogatom podvodnom svetu ili jednostavno uživati u predivnim zalascima sunca. 
+                    Osim prirodnih lepota, Milna obiluje i kulturnim znamenitostima i tradicijom.</p>
+                <p class="section-content-ostrvo-1__content__paragraph" >Posetioci mogu istražiti stare kamenite ulice, tradicionalne ribarske kuće i prekrasnu crkvu sv. Ivana Krstitelja. 
+                    Takođe, Milna je poznata po svojoj bogatoj pomorskoj istoriji, koju možete istražiti posetom Muzeju ribarstva.</p>
+                <p class="section-content-ostrvo-1__content__paragraph" >Ostrvo Brač, na kojem se nalazi Milna, takođe je poznat po svojoj bogatoj gastronomiji. Posetioci mogu uživati u autentičnim dalmatinskim jelima poput sveže ribe, domaćeg maslinovog ulja i vrhunskih vina.
+                    Ne propustite priliku da posjetite lokalne restorane i konobe i uživate u istinskim ukusima Mediterana.
+                    Ono po čemu će posetioci pamtiti Milnu i ostrvo Brač je gostoljubivost njenih stanovnika. </p>
+                <p class="section-content-ostrvo-1__content__paragraph" >Lokalci su poznati po svojoj ljubaznosti i otvorenosti prema posetiocima, uvek spremni da podele svoju kulturu, tradiciju i priče.
+                    Osjećaj topline i dobrodošlice koji doživite u Milni ostaće vam u trajnom sećanju kao nezaboravno iskustvo.</p>
+                <p class="section-content-ostrvo-1__content__paragraph" >Šarmantna marina i opuštena atmosfera Milne čine je savršenim mestom za opuštanje i uranjanje u lokalnu seljačku atmosferu. 
+                    Najbolja stvar kod Milne je što je samo korak-dva udaljena od mirnog gradskog pristaništa prepunog stvari za raditi i videti.</p>
+            </article>
+            <div class="section-content-ostrvo-1__content__images">
+                <img class="section-content-ostrvo-1__content__image" src="./assets/images/milna/2.jpg" />
+            </div>
+            <article class="section-content-ostrvo-1__content__article">
+                <h3 class="section-content-ostrvo-1__content__heading" >Evo naših omiljenih aktivnosti na otoku Braču:</h3>
+                <h3 class="section-content-ostrvo-1__content__heading" >1. Posetite Zlatni Rat</h3>
+                <p class="section-content-ostrvo-1__content__paragraph" >
+                    Zlatni Rat, proglašen za treću najbolju plažnu destinaciju u Evropi, jedno je od najimpresivnijih prirodnih čuda Jadranskog mora.
+                    Ovo prirodno čudo sa svojim peščanim obalama koje se prostiru 500 metara u Jadransko more, stvara plažu u obliku slova 'V'. 
+                    Ova plaža je toliko neobična zbog menjanja svog položaja i oblika u skladu sa smerom vetra i morskih struja.
+                    Ovakva dinamičnost plaže čini je fascinantnom i jedinstvenom destinacijom za istraživanje.
+                </p>
+                <div class="section-content-ostrvo-1__content__images">
+                    <img class="section-content-ostrvo-1__content__image" src="./assets/images/milna/Zlatni rat plaza.jpg" />
+                </div>
+                <p class="section-content-ostrvo-1__desc">Zlatni rat</p>
+                <h3 class="section-content-ostrvo-1__content__heading" >2. Posetite skrivene uvale</h3>
+                <p class="section-content-ostrvo-1__content__paragraph" >
+                    U blizini sela Milna nalaze se četiri glavne plaže do kojih se može doći peške: Osibova, Maslinova, Pasikova i Lučice plaža.
+                    Svaka od ovih plaža ima velike šljunkovite obale, tirkizno plavo more i okružene su mirisnim borovima koji pružaju utočište od letnjeg sunca.
+                    Budući da su okrenute prema jugu, plaže oko Milne su zaštićene od severnih vetrova, što ih čini savršenim mestom za opuštanje na suncu tokom dana ili brz osvežavajući skok u more.
+                    Pored ovih poznatih plaža, na ostrvu Brač ima mnogo mesta gde možete pronaći svoj skriveni raj!
+                </p>
+                <div class="section-content-ostrvo-1__content__images">
+                    <img class="section-content-ostrvo-1__content__image" src="./assets/images/milna/Brac uvala.jpg" />
+                </div>
+                <p class="section-content-ostrvo-1__desc">Brač uvala</p>
+                <h3 class="section-content-ostrvo-1__content__heading" >3. Posetite manastir Blaca</h3>
+                <p class="section-content-ostrvo-1__content__paragraph" >
+                    Ovaj manastir iz 16. veka impresivno je uklesan u liticu od krečnjaka, stvarajući zadivljujući prizor vredan truda potrebnog da se do njega stigne!
+                    U ranim danima, monasi su pronašli mir i tišinu među liticama stene, gde su kasnije izgradili impresivan manastir u i oko pećine.
+                    Monasi su naseljavali manastir vekovima, sve do pre 50 godina.
+                    Danas možete posetiti muzej manastira koji čuva raznovrsne zanimljive artefakte, knjige i astronomski pribor.
+                    Manastir Blaca je dostupan samo peške.
+                </p>
+                <div class="section-content-ostrvo-1__content__images">
+                    <img class="section-content-ostrvo-1__content__image" src="./assets/images/milna/Blaca manastir.jpg" />
+                </div>
+                <p class="section-content-ostrvo-1__desc">Manastir Blaca</p>
+                <h3 class="section-content-ostrvo-1__content__heading" >4. Uživajte u pogledu sa Vidove gore</h3>
+                <p class="section-content-ostrvo-1__content__paragraph" >
+                    Vidova Gora nije samo najviša tačka na Braču, već i najviša tačka svih Dalmatinskih ostrva!
+                    Ako imate dovoljno energije, možete pešačiti usponom od grada Bola do vrha planine, koji se uzdiže na visinu od 778 metara iznad nivoa mora.
+                    Tokom tročasovne avanture, prizori se menjaju i postaju sve impresivniji kako se penjete,a sa vrha se lako vide ostrvo Hvar, hrvatsko kopno pa čak i Italja u vedrom danu!
+                   Ako niste spremni za pešačenje, Vidova Gora je takođe dostupna automobilom.
+                </p>
+                <div class="section-content-ostrvo-1__content__images">
+                    <img class="section-content-ostrvo-1__content__image" src="./assets/images/milna/Vidova gora.jpg" />
+                </div>
+                <p class="section-content-ostrvo-1__desc">Vidova gora</p>
+            </article>
+            <article class="section-content-ostrvo-1__content__article">
+                <h3 class="section-content-ostrvo-1__content__heading" >Istražite obližnja mesta</h3>
+                <p class="section-content-ostrvo-1__content__paragraph" >
+                    &nbsp &nbsp &nbsp 1. Bol
+                </p>    
+                <p class="section-content-ostrvo-1__content__paragraph" >
+                    &nbsp &nbsp &nbsp 2. Supetar
+                </p>  
+                <p class="section-content-ostrvo-1__content__paragraph" >
+                    &nbsp &nbsp &nbsp 3. Pučišća
+                </p>
+                <p class="section-content-ostrvo-1__content__paragraph" >
+                    &nbsp &nbsp &nbsp 4. Bobovišća
+                </p>
+                    <!-- <ul class="section-content__blog__section__list" >
+                        <li class="section-content__blog__section__item" >
+                            <p class="section-content__blog__section__paragraph" >Carpe Diem</p>
+                        </li>
+                        <li class="section-content__blog__section__item" >
+                            <p class="section-content__blog__section__paragraph" >Nautica Bar</p>
+                        </li>
+                        <li class="section-content__blog__section__item" >
+                            <p class="section-content__blog__section__paragraph" >Hula Hula Bar</p>
+                        </li>
+                    </ul> -->
+            </article>
+            <article class="section-content-ostrvo-1__content__article">
+                <h3 class="section-content-ostrvo-1__content__heading" >Gde jesti u Milni:</h3>
+                <p class="section-content-ostrvo-1__content__paragraph" >Ovo su samo neka od mnogobrojnih lokacija gde možete jesti ukusnu hranu.
+                </p>  
+                    <p class="section-content-ostrvo-1__content__paragraph" >
+                        &nbsp &nbsp &nbsp 1. Gajeta konoba
+                    </p>    
+                    <p class="section-content-ostrvo-1__content__paragraph" >
+                        &nbsp &nbsp &nbsp 2. Restoran Bago
+                    </p>  
+                    <p class="section-content-ostrvo-1__content__paragraph" >
+                        &nbsp &nbsp &nbsp 3. Picerija Slika
+                    </p> 
+                    <!-- <ul class="section-content__blog__section__list" >
+                        <li class="section-content__blog__section__item" >
+                            <p class="section-content__blog__section__paragraph" >Mizarola</p>
+                        </li>
+                        <li class="section-content__blog__section__item" >
+                            <p class="section-content__blog__section__paragraph" >Apetti</p>
+                        </li>
+                        <li class="section-content__blog__section__item" >
+                            <p class="section-content__blog__section__paragraph" >Divino</p>
+                        </li>
+                    </ul> -->
+            </article>
+            <div class="section-gallery__gallery">
+                <div class="section-gallery__gallery__column">
+                    <div class="section-gallery__gallery__row">
+                        <img class="section-gallery__gallery__image-2" src="./assets/images/milna/2.jpg" />
+                        <img class="section-gallery__gallery__image-2" src="./assets/images/milna/Blaca manastir.jpg" />
+                    </div>
+                    <div class="section-gallery__gallery__row-large">
+                        <img class="section-gallery__gallery__image" src="./assets/images/milna/Brac uvala.jpg" />
+                    </div>
+                </div>
+                <div class="section-gallery__gallery__column">
+                    <div class="section-gallery__gallery__row-large">
+                        <img class="section-gallery__gallery__image" src="./assets/images/milna/Milna.jpg" />
+                    </div>
+                    <div class="section-gallery__gallery__row">
+                        <img class="section-gallery__gallery__image-2" src="./assets/images/milna/Vidova gora.jpg" />
+                        <img class="section-gallery__gallery__image-2" src="./assets/images/milna/Zlatni rat plaza.jpg" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" >
+        <div class="footer__body">
+            <div class="footer__mobile">
+                <img class="footer__mobile__logo" src="./assets/svgs/logo-temp.svg" />
+                <div class="footer__mobile__social">
+                    <a class="footer__mobile__social__link" >
+                        <img class="footer__mobile__social__icon" src="./assets/svgs/social-icon-1.svg" />
+                    </a>
+                    <a class="footer__mobile__social__link" >
+                        <img class="footer__mobile__social__icon" src="./assets/svgs/social-icon-3.svg" />
+                    </a>
+                </div>
+            </div>
+            <img class="footer__logo" src="./assets/svgs/logo-temp.svg" />
+            <ul class="footer__links">
+                <div class="footer__divider">
+                    <li class="footer__link" >
+                        <p class="footer__link__title" >Vodič</p>
+                        <ul class="footer__sublinks" >
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/vodic.html#link-1" >Kako bukirati brod</a>
+                            </li>
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/vodic.html#link-2" >Odabir plovila</a>
+                            </li>
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/vodic.html#link-3" >Sve o jedrenju</a>
+                            </li>
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/vodic.html#link-4" >Skiper/Kapetan</a>
+                            </li>
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/vodic.html#link-5" >Agent za najam plovila</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="footer__link" >
+                        <p class="footer__link__title" >Pustolovine</p>
+                        <ul class="footer__sublinks" >
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/pustolovine.html#link-1" >Privatna tura</a>
+                            </li>
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/pustolovine.html#link-2" >Iznajmljivanje kabine</a>
+                            </li>
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/pustolovine.html#link-3" >Hotila</a>
+                            </li>
+                        </ul>
+                    </li>
+                </div>
+                <div class="footer__divider">
+                    <li class="footer__link" >
+                        <p class="footer__link__title" >Destinacije</p>
+                        <ul class="footer__sublinks" >
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/hvar.html">Hvar</a>
+                            </li>
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/dubrovnik.html" >Dubrovnik</a>
+                            </li>
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/korcula.html" >Korčula</a>
+                            </li>
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/milna.html">Milna</a>
+                            </li>
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/vis.html" >Vis</a>
+                            </li>
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/solta.html" >Šolta</a>
+                            </li>
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/makarska.html" >Makarska</a>
+                            </li>
+                            <li class="footer__sublink" >
+                                <img class="footer__sublink__arrow" src="./assets/svgs/footer-sublink-arrow.svg" />
+                                <a class="footer__sublink__anchor" href="/lastovo.html" >Lastovo</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="footer__link" >
+                        <a class="footer__link__title" href="/plovila" >Plovila</a>
+                    </li>
+                    <li class="footer__link" >
+                        <a class="footer__link__title" href="/o-nama" >O nama</a>
+                    </li>
+                </div>
+            </ul>
+            <div class="footer__social">
+                <a class="footer__social__link" >
+                    <img class="footer__social__icon" src="./assets/svgs/social-icon-1.svg" />
+                </a>
+                <a class="footer__social__link" >
+                    <img class="footer__social__icon" src="./assets/svgs/social-icon-3.svg" />
+                </a>
+            </div>
+        </div>
+        <div class="footer__copyright">
+            <p class="footer__copyright__text">© 2024 MDSailing. Sva prava zadržana.</p>
+        </div>
+    </footer>
+    <script src="./header.js" >
+    </script>
+</body>
+
+</html> 
