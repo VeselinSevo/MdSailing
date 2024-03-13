@@ -1,5 +1,6 @@
-document.querySelector('.section-form__button').addEventListener('click', function(event) {
+document.querySelector('#reservation-form .section-form__button').addEventListener('click', function(event) {
     event.preventDefault(); // Prevent form submission
+
 
     // Validation flags
     let isValid = true;
@@ -134,27 +135,27 @@ document.querySelector('.section-form__button').addEventListener('click', functi
 
 
     // Check room number field
-    let regexRoom = new RegExp('^[1-6]$')
-    const roomInput = document.querySelector('.section-form__input[placeholder="2"]');
-    const roomWarning = roomInput.closest('.section-form__input-section').querySelector('.section-form__input-warning');
+    let regexPeople = /^(?:[1-9]|10)$/;
+    const peopleInput = document.querySelector('.section-form__input[placeholder="2"]');
+    const peopleWarning = peopleInput.closest('.section-form__input-section').querySelector('.section-form__input-warning');
 
-    if (!regexRoom.test(roomInput.value.trim())) {
-        roomWarning.classList.remove('display-none'); 
-        roomWarning.classList.add('display-block');
+    if (!regexPeople.test(peopleInput.value.trim())) {
+        peopleWarning.classList.remove('display-none');
+        peopleWarning.classList.add('display-block');
         // Show warning
         isValid = false;
     } else {
-        roomWarning.classList.remove('display-block');
-        roomWarning.classList.add('display-none');
+        peopleWarning.classList.remove('display-block');
+        peopleWarning.classList.add('display-none');
         // Hide warning
     }
 
     // Add event listener to room number input
-    roomInput.addEventListener('input', function() {
-        const roomValue = roomInput.value.trim();
-        if (regexRoom.test(roomValue)) {
-            roomWarning.classList.remove('display-block');
-            roomWarning.classList.add('display-none'); // Hide warning
+    peopleInput.addEventListener('input', function() {
+        const roomValue = peopleInput.value.trim();
+        if (regexPeople.test(roomValue)) {
+            peopleWarning.classList.remove('display-block');
+            peopleWarning.classList.add('display-none'); // Hide warning
         }
     });
 
@@ -211,6 +212,7 @@ document.querySelector('.section-form__button').addEventListener('click', functi
 
     let boatTypeSelected = false;
     boatTypeInputs.forEach(function(input) {
+        console.log(input.checked)
         if (input.checked) {
             boatTypeSelected = true;
             console.log(input)
@@ -226,6 +228,8 @@ document.querySelector('.section-form__button').addEventListener('click', functi
         // Hide warning
     }
 
+    console.log(boatTypeValue)
+
     // Add event listener to boat type inputs
     boatTypeInputs.forEach(function(input) {
         input.addEventListener('change', function() {
@@ -236,72 +240,103 @@ document.querySelector('.section-form__button').addEventListener('click', functi
         });
     });
 
+    console.log(456)
     // If all fields are valid, send email
     if (isValid) {
-        const formData = new FormData(document.querySelector('form'));
-        const email = formData.get('email');
-        const name = formData.get('name')
-        const type = formData.get('type');
-        console.log(type)
-        const date = formData.get('date')
-
-        var parts = date.split("-");
-
-        // Rearrange the parts to form the desired date format
-        var formattedDate = parts[2] + "/" + parts[1] + "/" + parts[0];
-
-        // Here you can add code to send an email using a server-side language like Node.js, PHP, etc.
-        // Example: sendEmail(email, message);
-        // You'll need to implement the sendEmail function or use a third-party email service.
-
-        // For now, let's log the email content
-        console.log("Email content:");
-        console.log("To:", email);
-        sendEmail(
-            "veselinsevo@gmail.com", 
-            "isidoraopresnik@gmail.com", 
-            "veselinsevo@gmail.com", 
-            `Uspesno ste poslali upit - ${name}, ${type}, ${formattedDate}`, 
-            `
-            Dragi ${name},
-
-            Hvala vam što ste odabrali našu firmu za iznajmljivanje jedrilica i katamarana. Vaš upit je uspešno primljen.
-
-            Detalji upita:
-
-            Tip plovila: ${type}
-            Datum rezervacije: ${date}
-            Očekujte naš odgovor u narednih sat vremena kako bismo potvrdili vašu rezervaciju i pružili vam dodatne informacije o daljim koracima.
-
-            U međuvremenu, slobodno nas kontaktirajte ukoliko imate bilo kakvih dodatnih pitanja ili zahteva.
-
-            Srdačan pozdrav,
-            MDSAILING
-            mdsailing@gmail.com
-            063505710
-
-            `)
+        console.log(123)
+        sendEmail(boatTypeValue)
     }
 });
 
+function sendEmail(boatTypeValue) {
+    const successMsg = document.getElementById('reservation-success-msg');
+    const failMsg = document.getElementById('reservation-fail-msg');
+    const form = document.querySelector('#reservation-form');
 
-function sendEmail(username, to, from, subject, body) {
-    let password = '8AB30CC9F6C57EBA274F812FE9BFF154E996'
-    Email.send(
-        {
-            Host: "smtp.elasticemail.com",
-            Username: username,
-            Password: password,
-            To: to,
-            From: from,
-            Subject: subject,
-            Body: body
+    const data = new URLSearchParams();
+    for (const pair of new FormData(form)) {
+        data.append(pair[0], pair[1]);
+    }
+
+    data.append('boatType', boatTypeValue)
+
+    const url = './sendemail.php';
+    const urlToUs = './sendemailtous.php';
+
+    // Initialize a variable to track successful requests
+    let successfulRequests = 0;
+
+    // Fetch to sendemail.php
+    fetch(url, {
+        method: 'post',
+        body: data,
+    })
+    .then(response => {
+        if (response.ok) {
+            // Increment successful requests count
+            successfulRequests++;
+        } else {
+            throw new Error('First fetch request failed');
         }
-    ).then(
-        message => alert(message)
-    )
-
+    })
+    .then(() => {
+        // Fetch to sendemailtous.php
+        return fetch(urlToUs, {
+            method: 'post',
+            body: data,
+        });
+    })
+    .then(response => {
+        if (response.ok) {
+            // Increment successful requests count
+            successfulRequests++;
+        } else {
+            throw new Error('Second fetch request failed');
+        }
+    })
+    .then(() => {
+        // If both requests were successful, display success message
+        if (successfulRequests === 2) {
+            successMsg.style.display = 'block';
+            // Hide after 3 seconds
+            setTimeout(() => {
+                successMsg.style.display = 'none';
+            }, 5000);
+        } else {
+            // If any request failed, display failure message
+            throw new Error('One or both fetch requests failed');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // Display general failure message in case of any error
+        failMsg.style.display = 'block';
+        // Hide after 3 seconds
+        setTimeout(() => {
+            failMsg.style.display = 'none';
+        }, 5000);
+    });
 }
+
+
+
+    // let password = '8AB30CC9F6C57EBA274F812FE9BFF154E996'
+    // let apiKey = 'EB340283AA8C22DFB3C09FF5934A8057B81A3A0C2825C958BC0CEC2AD748C81B9E5362D4B82666311167E57855C30647'
+    // Email.send(
+    //     {
+    //         Host: "smtp.elasticemail.com",
+    //         Username: username,
+    //         Password: password,
+    //         To: to,
+    //         From: from,
+    //         Subject: subject,
+    //         Body: body
+    //     }
+    // ).then(
+    //     message => alert(message)
+    // )
+
+
 
 document.querySelector('#phone').addEventListener('input', function(event) {
     let input = event.target.value.replace(/\D/g, ''); // Remove non-numeric characters
@@ -328,6 +363,24 @@ document.querySelector('#phone').addEventListener('input', function(event) {
 
 const datePicker = document.getElementById('date');
 
+// Get today's date
+const today = new Date();
+
+// Calculate the number of days to add to reach the nearest Saturday
+const dayOfWeek = today.getDay();
+const daysToAdd = dayOfWeek < 6 ? 6 - dayOfWeek : 6; // If it's already Saturday, add 0 days
+
+// Create a new date object and set it to the nearest Saturday
+const nearestSaturday = new Date(today);
+nearestSaturday.setDate(today.getDate() + daysToAdd);
+
+// Format the nearest Saturday as YYYY-MM-DD (ISO format)
+const nearestSaturdayFormatted = nearestSaturday.toISOString().split("T")[0];
+
+// Set the initial value of the date picker to the nearest Saturday
+datePicker.value = nearestSaturdayFormatted;
+
+// Add change event listener to the date picker
 datePicker.addEventListener('change', function(event) {
     const selectedDate = new Date(datePicker.value);
     const dayOfWeek = selectedDate.getDay();
@@ -344,10 +397,9 @@ datePicker.addEventListener('change', function(event) {
         datePicker.value = nearestSaturday.toISOString().split("T")[0];
 
         // Inform the user
-        alert("Poštovani, možete izabrati samo subote, jer tada brodovi isplovljavaju. Vaš datum rezervacije je pomeren na najbližu subotu. Hvala");
+        alert("Poštovani, možete izabrati samo subote, jer tada brodovi isplovljavaju. Vaš datum rezervacije je pomeren na najbližu subotu. Hvala");
     }
 });
-
 
 
 // Function to validate email format

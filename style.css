@@ -3375,6 +3375,26 @@ textarea {
   margin-top: 12px;
 }
 
-#sailling-form {
+#sailing-form {
   overflow: hidden;
+}
+
+#reservation-success-msg {
+  font-family: "Poppins", sans-serif;
+  display: none;
+}
+
+#reservation-fail-msg {
+  font-family: "Poppins", sans-serif;
+  display: none;
+}
+
+#contact-success-msg {
+  font-family: "Poppins", sans-serif;
+  display: none;
+}
+
+#contact-fail-msg {
+  font-family: "Poppins", sans-serif;
+  display: none;
 }/*# sourceMappingURL=style.css.map */

@@ -1,4 +1,4 @@
-document.querySelector('.section-contact__content__form').addEventListener('submit', function(event) {
+document.querySelector('#contact-form').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent form submission
 
     // Validation flags
@@ -100,8 +100,48 @@ document.querySelector('.section-contact__content__form').addEventListener('subm
 
     // If all fields are valid, you can submit the form or take further action
     if (isValid) {
-        // Here you can add code to submit the form or take further action
-        // For now, let's just log a message
-        console.log("Form submitted successfully!");
+        sendEmail()
     }
 });
+
+function sendEmail() {
+    const successMsg = document.getElementById('contact-success-msg');
+    const failMsg = document.getElementById('contact-fail-msg');
+    const form = document.querySelector('#contact-form');
+
+    const data = new URLSearchParams();
+    for (const pair of new FormData(form)) {
+        data.append(pair[0], pair[1]);
+    }
+
+    const url = './sendemailcontact.php';
+
+    // Fetch to sendemail.php
+    fetch(url, {
+        method: 'post',
+        body: data,
+    })
+    .then((response) => {
+        // If both requests were successful, display success message
+        if (response.ok) {
+            successMsg.style.display = 'block';
+            // Hide after 3 seconds
+            setTimeout(() => {
+                successMsg.style.display = 'none';
+            }, 5000);
+        } else {
+            // If any request failed, display failure message
+            throw new Error('Fetch requests failed');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        // Display general failure message in case of any error
+        failMsg.style.display = 'block';
+        // Hide after 3 seconds
+        setTimeout(() => {
+            failMsg.style.display = 'none';
+        }, 5000);
+    });
+    
+}
