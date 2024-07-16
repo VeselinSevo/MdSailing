@@ -1,0 +1,9 @@
+{
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "MD Sailing",  
+    "url": "https://mdsailing.rs/",
+    "logo": "https://mdsailing.rs/favicon.ico"  
+}
+  
+  

@@ -1,0 +1,107 @@
+.header__jezici-menu{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  padding: 12px 20px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  background-color: #0f172a;
+  transition: 0.3s ease-in-out;
+  z-index: -20;
+}
+.header__jezici-menu > :not(:last-child) {
+  margin-right: 16px;
+}
+@media (min-width: 1600px) {
+  .header__jezici-menu {
+    top: -180px;
+  }
+}
+@media (max-width: 1600px) {
+  .header__jezici-menu {
+    top: -180px;
+  }
+}
+@media (max-width: 1050px) {
+  .header__jezici-menu {
+    display: none;
+  }
+}
+.header__jezici-menu__shown {
+  transition: 0.3s ease-in-out;
+}
+@media (min-width: 1600px) {
+  .header__jezici-menu__shown {
+    top: 63px;
+  }
+}
+@media (max-width: 1600px) {
+  .header__jezici-menu__shown {
+    top: 50px;
+  }
+}
+.header__jezici-menu__item {
+  height: 100%;
+  padding: 20px 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #0f172a;
+  border-radius: 10px;
+  cursor: pointer;
+}
+@media (min-width: 1600px) {
+  .header__jezici-menu__item {
+    width: 240px;
+  }
+}
+@media (max-width: 1600px) {
+  .header__jezici-menu__item {
+    width: 220px;
+  }
+}
+.header__jezici-menu__item > :not(:last-child) {
+  margin-bottom: 10px;
+}
+.header__jezicic-menu__text {
+  color: #cbd5e1;
+}
+@media (min-width: 1600px) {
+  .header__jezici-menu__text {
+    font-size: 16px;
+  }
+}
+@media (max-width: 1600px) {
+  .header__jezici-menu__text {
+    font-size: 15px;
+  }
+}
+@media (min-width: 1600px) {
+  .header__jezici-menu__icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+@media (max-width: 1600px) {
+  .header__jezici-menu__icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+.header__jezici-menu__item {
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+}
+.header__jezici-menu__item:hover {
+  background-color: #1e293b;
+  transition: 0.2s ease-in-out;
+}
+.header__jezici-menu__item:hover * {
+  color: #3b82f6;
+}
+.header__jezici-menu__item:hover img {
+  filter: brightness(0) saturate(100%) invert(43%) sepia(75%) saturate(2923%) hue-rotate(203deg) brightness(100%) contrast(94%);
+}
